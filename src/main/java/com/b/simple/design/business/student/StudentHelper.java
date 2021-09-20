@@ -21,7 +21,7 @@ public class StudentHelper {
 		
 		if (isGradeA(mark, isMaths))
 			grade = "A";
-		else if (isBGrade(mark, isMaths)) {
+		else if (isGradeB(mark, isMaths)) {
 			grade = "B";
 		}
 		return grade;
