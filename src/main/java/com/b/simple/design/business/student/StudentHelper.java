@@ -5,8 +5,8 @@ public class StudentHelper {
 	/*
 	* You get a grade B if marks are between 51 and 80 (both inclusive). Except for Maths where the upper limit is increased by 10.
 	*/
-	public boolean isGradeB(int marks, boolean isMaths) {
-		return isMaths ? marks>=51 && marks<=90 : marks>=51 && marks<=80; 
+	public boolean isGradeB(int mark, boolean isMaths) {
+		return isMaths ? mark>=51 && mark<=90 : mark>=51 && mark<=80; 
 	}
 
 	/* PROBLEM 2 */
@@ -21,7 +21,7 @@ public class StudentHelper {
 		
 		if (isGradeA(mark, isMaths))
 			grade = "A";
-		else if (isBGrade(mark, isMaths)) {
+		else if (isGradeB(mark, isMaths)) {
 			grade = "B";
 		}
 		return grade;
@@ -55,11 +55,11 @@ public class StudentHelper {
      * marks2 - your friends marks
     */
         
-    public String willQualifyForQuiz(int marks1, int marks2, boolean isMaths) {
-        if ((isMaths ? marks1 <= 25 : marks1 <= 20)
-                || (isMaths ? marks2 <= 25 : marks2 <= 20)) return "NO";
-        if ((isMaths ? marks1 >= 85 : marks1 >= 80)
-                || (isMaths ? marks2 >= 85 : marks2 >= 80)) return "YES";
+    public String willQualifyForQuiz(int mark1, int mark2, boolean isMaths) {
+        if ((isMaths ? marks <= 25 : mark1 <= 20)
+                || (isMaths ? mark2 <= 25 : mark2 <= 20)) return "NO";
+        if ((isMaths ? mark1 >= 85 : mark1 >= 80)
+                || (isMaths ? mark2 >= 85 : mark2 >= 80)) return "YES";
         return "MAYBE";
     }	
 
